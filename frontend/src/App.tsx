@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
          <Routes>
-            <Route path='/home' element={<HomePage/>}/>
+            <Route path='/' element={<HomePage/>}/>
             <Route path="/play/plinko" element={<Plinko/>}/>
          </Routes>
     </BrowserRouter>
