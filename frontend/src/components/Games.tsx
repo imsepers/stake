@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import plinkoimg from '../assets/plinko.jpg'
 const gameData = {
     newGames: [
@@ -53,10 +53,10 @@ const Games: React.FC = () => {
   //   mostPlayedGames: []
   // });
 
-  useEffect(() => {
-    // Load data from the static file or an API
-    // setData(gameData);
-  }, []);
+  // useEffect(() => {
+  //   // Load data from the static file or an API
+  //   // setData(gameData);
+  // }, []);
 
   return (
     <div className="p-6 bg-[rgb(1,7,24)] min-h-screen">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface SidebarItem {
   iconurl: string;
@@ -13,10 +13,10 @@ interface SidebarProps {
 }
 
 const SidebarBox: React.FC<SidebarProps> = ({ heading, items }) => {
-  const handleItemClick = (url: string) => {
-      navigate(url);
-  };
-  const navigate=useNavigate();
+  // const handleItemClick = (url: string) => {
+  //     navigate(url);
+  // };
+  // const navigate=useNavigate();
   return (
     <div className="border border-solid border-[rgb(60,117,175)] bg-gradient-to-r from-[rgb(17,26,50)] to-[rgb(35,55,89)] rounded-xl space-y-3 p-5 shadow-lg select-none">
       <div>
@@ -27,7 +27,7 @@ const SidebarBox: React.FC<SidebarProps> = ({ heading, items }) => {
           <li 
             key={index} 
             className="flex cursor-pointer items-center space-x-4 ps-3 hover:bg-[rgb(23,34,58)] p-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105" 
-            onClick={() => handleItemClick(item.url)}
+            // onClick={() => handleItemClick(item.url)}
           >
             <img className="w-6 h-6" src={item.iconurl} alt={`${item.title} icon`} />
             <p className="text-white">{item.title}</p>

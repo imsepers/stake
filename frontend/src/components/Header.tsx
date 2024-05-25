@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Header = () => {
-    const [balance, setBalance] = useState(0.00); // Default wallet balance
+    const [balance] = useState(0.00); // Default wallet balance
     const [showRecharge, setShowRecharge] = useState(false);
 
     // Function to handle wallet recharge
