@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import plinko from '../assets/plinko.jpg'
-import cards from "../assets/coins.jpg"
+import plinkoimg from '../assets/plinko.jpg'
 const gameData = {
     newGames: [
-      { imageurl:plinko},
-      { imageurl: cards, title: "New Game 2" },
-      { imageurl:cards, title: "Plinko" },
-      { imageurl: cards, title: "New Game 2" },
-      { imageurl:cards, title: "Plinko" },
-      { imageurl: cards, title: "New Game 2" },
-      { imageurl:cards, title: "Plinko" },
-      { imageurl: cards, title: "New Game 2" },
+      { imageurl:plinkoimg , title:"plinko"},
     ],
     topGames: [
       { imageurl: "/path/to/image3.jpg", title: "Top Game 1" },
@@ -44,7 +36,7 @@ const GameCategory: React.FC<GameCategoryProps> = ({ heading, games }) => (
           <Link to={`/play/${game.title}`}>
             <img className="w-44 h-60 object-fit" src={game.imageurl} alt={game.title} />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 bg-black bg-opacity-10 rounded-xl">
-              <h3 className="text-green-400 text-2xl font-bold pt-52 ps-24 select-none">{game.title}</h3>
+              <h3 className="text-orange-600 text-2xl font-extrabold pt-52 ps-24 select-none">{game.title}</h3>
             </div>
           </Link>
         </div>
@@ -55,11 +47,11 @@ const GameCategory: React.FC<GameCategoryProps> = ({ heading, games }) => (
 
   
 const Games: React.FC = () => {
-  const [data, setData] = useState({
-    newGames: [],
-    topGames: [],
-    mostPlayedGames: []
-  });
+  // const [data, setData] = useState({
+  //   newGames: [],
+  //   topGames: [],
+  //   mostPlayedGames: []
+  // });
 
   useEffect(() => {
     // Load data from the static file or an API
@@ -68,7 +60,7 @@ const Games: React.FC = () => {
 
   return (
     <div className="p-6 bg-[rgb(1,7,24)] min-h-screen">
-      <GameCategory heading="New Games" games={data.newGames} />
+      <GameCategory heading="New Games" games={gameData.newGames} />
 
     </div>
   );

@@ -24,7 +24,7 @@ const Multiplier:{[key:number]:number}={
     16: 16
 }
 
-router.get('/play',async(req,res)=>{
+router.post('/play',async(req,res)=>{
       let outcome:number =0;
       const pattern:string[] =[];
       for(let i=0;i<TotalDrops;i++){
