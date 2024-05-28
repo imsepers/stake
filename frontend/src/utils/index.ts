@@ -1,1 +1,1 @@
-export const baseURL = "http://localhost:3000/api/games/plinko/play";
+export const baseURL = "https://stake-5.onrender.com/api/games/plinko/play";

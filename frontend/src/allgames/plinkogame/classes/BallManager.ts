@@ -62,7 +62,6 @@ export class BallManager {
         return {background: '#7fff00', color: 'black'};
     }
     drawSinks() {
-        this.ctx.fillStyle = 'green';
         const SPACING = obstacleRadius * 2;
         for (let i = 0; i<this.sinks.length; i++)  {
             this.ctx.fillStyle = this.getColor(i).background;
@@ -75,22 +74,24 @@ export class BallManager {
     }
 
     draw() {
-        this.ctx.clearRect(0, 0, Width, Height);
+        this.ctx.clearRect(0, 0, Width, Height);  //This clear the canvas 
         this.drawObstacles();
         this.drawSinks();
         this.balls.forEach(ball => {
             ball.draw();
-            ball.update();
+            ball.update();  //check if there is any collison
         });
     }
     
     update() {
         this.draw();
-        this.requestId = requestAnimationFrame(this.update.bind(this));
+        this.requestId = requestAnimationFrame(this.update.bind(this)); //We have an infinite running loop, We are not running it directly
+        //   We are running it and ask it to Perform the draw fuunction once you  are free from this than agian call update function. 
     }
 
     stop() {
         if (this.requestId) {
+
             cancelAnimationFrame(this.requestId);
         }
     }

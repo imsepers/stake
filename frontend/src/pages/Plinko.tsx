@@ -7,9 +7,9 @@ import { baseURL } from "../utils";
 export function Plinko() {
   const [ballManager, setBallManager] = useState<BallManager>();
   const canvasRef = useRef<any>();
-
   useEffect(() => {
     if (canvasRef.current) {
+      console.log(canvasRef.current);
       const ballManager = new BallManager(
         canvasRef.current as unknown as HTMLCanvasElement
       );
@@ -17,6 +17,8 @@ export function Plinko() {
     }
   }, [canvasRef]);
 
+  
+  {console.log(canvasRef)}
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center bg-[rgb(15,33,46)]">
       <canvas ref={canvasRef} width="800" height="800"></canvas>
@@ -26,7 +28,7 @@ export function Plinko() {
           const response = await axios.post(`${baseURL}`, {
             data: 1,
           });
-            console.log(response);
+            // console.log(response);
           if (ballManager) {
             ballManager.addBall(response.data.droppoint);
           }

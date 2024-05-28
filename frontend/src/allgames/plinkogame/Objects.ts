@@ -60,8 +60,8 @@ export const CreateSinks=()=>{
      for(let i=0;i<Num_Sinks;i++){
          const x =Width/2 + sinkWidth *(i-Math.floor(Num_Sinks/2)) -SPACING*2;
          const y =Height-170;
-         const width =sinkWidth;
-         const height =width;
+         const width =sinkWidth+2;
+         const height =26;
          sinks.push({x,y,width,height,multiplier:MULTIPLIERS[i+1]});
      }
      return sinks;
